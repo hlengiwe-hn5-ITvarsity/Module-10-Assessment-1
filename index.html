@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Fetch App</title>
+        <link rel="stylesheet" href="style.css">
     </head>
    <body>
+    <div class="get">
        <button id="getData">Get data</button>
        <button id="getList">Get list</button>
+    </div>
        <br/><br/>
 
        <form id="myForm">
           <input type="text" name="firstname" id="firstname" value="firstname"/>
           <input type="text" name="lastname" id="lastname" value="lastname"/><br/>
-          <button id="submitform">Submit</button>
+          <button id="submitForm">Submit</button>
        </form>
 
        <p id="posts"></p>
@@ -21,7 +24,7 @@
        <script>
            document.getElementById("getData").addEventListener('click', getData);
            document.getElementById("getList").addEventListener('click', getList);
-           document.getElementById("submitform").addEventListener('click', submitform);
+           document.getElementById("submitForm").addEventListener('click', submitForm);
 
            function getData(){
 
@@ -55,25 +58,25 @@
                  }
                  document.getElementById("posts").innerHTML = output;
                })
+            }
 
-               function submitform(e){
+               function submitForm(e){
                    e.preventDefault();
 
                    form = new FormData(document.querySelector("#myForm"));
-                   fect('https://mysite.itvarsity.org/api/fetch/send-data/', {
+                   fetch('https://mysite.itvarsity.org/api/fetch/send-data/', {
 
-                    method = 'POST',
-                    headers: {'accept': 'application/json, */*'},
+                    method: 'POST',
+                    headers: {'Accept': 'application/json, */*'},
                     body: form
                    })
-                   .then(function(resposne){
+                   .then(function(response){
                     return response.text();
                })
-               .then(function(response){
-               documet.getElementById("greeting").innerHTML = data;
+               .then(function(data){
+               document.getElementById("greeting").innerHTML = data;
               })
            }
-
        </script>
    </body>
 </html>

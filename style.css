@@ -1,0 +1,28 @@
+body{
+   background: linear-gradient(to top right, #000099 0%, #66ff66 100%);
+}
+
+#myForm{
+    text-align: center;
+}
+
+.get{
+    text-align: center;
+}
+
+input{
+    margin-top: 50px;
+    background-color: black;
+    color: aqua;
+}
+
+button{
+  margin-top: 50px;
+  background-color: #0d3030;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
